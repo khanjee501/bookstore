@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "allauth",
     "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.github",
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
