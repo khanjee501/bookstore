@@ -1,4 +1,6 @@
 {% extends '_base.html' %}
+{% load static %}
+{% load socialaccount %}
 
 {% load crispy_forms_tags %}
 
@@ -11,4 +13,13 @@
         {{ form|crispy }}
         <button class="btn btn-success" type="submit">Sign up</button>
     </form>
+    <p>Or sign up using</p>
+    <p>
+        <button class="google-btn"  type="submit">
+            <a class="google-btn-link" href="{% provider_login_url 'google' %}">
+                <img src="{% static 'images/google.png' %}" height="25px" width="auto" alt="Google logo">
+                Sign in with Google
+              </a>
+        </button>
+    </p>
 {% endblock content %}
