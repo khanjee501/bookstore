@@ -52,11 +52,13 @@ INSTALLED_APPS = [
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
-    "allauth.acocunt.auth.backends.AuthenticationBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 EMAIL_BACKEND = "django.core.mail.backends.console.EMailBackend"
 LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT = "home"
+
+ACCOUNT_SESSION_REMEMBER = True
 
 # django crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
