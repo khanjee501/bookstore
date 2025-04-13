@@ -74,6 +74,9 @@ ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_UNIQUE = True
 
+# Default email to sent sonfirmatort emails from
+DEFAULT_FROM_EMAIL = "admin@sarobookstore.com"
+
 
 # django crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
