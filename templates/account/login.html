@@ -7,35 +7,34 @@
 {% block title %}Log in{% endblock title %}
 
 {% block content %}
-    <h2>Log in</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button class="btn btn-success" type="submit">Log in</button>
-    </form>
-    <p class="mt-3">Or Sign In using.....</p>
-    <p>
-        <button class="google-btn"  type="submit">
-            <a class="google-btn-link" href="{% provider_login_url 'google' %}">
-                <img src="{% static 'images/google.png' %}" height="25px" width="auto" alt="Google logo">
-                Sign in with Google
-              </a>
-        </button>
-    </p>
-    <p>
-        <button type="submit">
-            <a href="{% provider_login_url 'facebook' %}">
-                <img src="{% static 'images/fb.png' %}" height="25px" width="auto" alt="FB logo">
-                Sign in with Facebook
-              </a>
-        </button>
-    </p>
-    <p>
-        <button type="submit">
-            <a href="{% provider_login_url 'github' %}">
-                <img src="{% static 'images/github.png' %}" height="25px" width="auto" alt="FB logo">
-                Sign in with Github
-              </a>
-        </button>
-    </p>
+    <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+        <div class="card d-flex flex-column justify-content-center shadow-sm rounded-10 p-3 m-4 h-80 w-50 ">
+            <h1 class="text-center text-secondary">Log in</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-success w-100" type="submit">Log in</button>
+            </form>
+            <p class="mt-3 text-center">Or Sign In using.....</p>
+            <button class="google-btn w-100"  type="submit">
+                <a class="google-btn-link" href="{% provider_login_url 'google' %}">
+                    <img src="{% static 'images/google.png' %}" height="25px" width="auto" alt="Google logo">
+                    Sign in with Google
+                </a>
+            </button>
+            <button class="google-btn w-100" type="submit">
+                <a class="google-btn-link" href="{% provider_login_url 'facebook' %}">
+                    <img src="{% static 'images/fb.png' %}" height="25px" width="auto" alt="FB logo">
+                    Sign in with Facebook
+                </a>
+            </button>
+            <button class="google-btn w-100" type="submit">
+                <a class="google-btn-link" href="{% provider_login_url 'github' %}">
+                    <img src="{% static 'images/github.png' %}" height="25px" width="auto" alt="FB logo">
+                    Sign in with Github
+                </a>
+            </button>
+        </div>
+    </div>
+
 {% endblock content %}
