@@ -4,6 +4,11 @@ body {
     padding-top: 4.5rem;
 }
 
+login-btn:hover {
+  background-color: rgb(0, 0, 0, 0);
+  color: blue;
+}
+
 h1 {
     color: cadetblue;
     opacity: 0;
