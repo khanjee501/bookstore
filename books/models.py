@@ -12,6 +12,11 @@ class Book(models.Model):
     # We can use FileField to use any type of file
     cover = models.ImageField(upload_to="cover/", blank=True)
 
+    class Meta:
+        permissions = [
+            ("special_status", "Can read all books"),
+        ]
+
     def __str__(self):
         return self.title
 
