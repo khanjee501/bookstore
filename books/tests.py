@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
@@ -8,6 +9,12 @@ class BookTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
+        cls.user = get_user_model().objects.create_user(
+            username="reviewuser",
+            email="reviewuser@email.com",
+            password="testpass123",
+        )
+
         cls.book = Book.objects.create(
             title="Harry Potter",
             author="JK Rowling",
@@ -31,4 +38,5 @@ class BookTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, "Harry Potter")
+        self.assertNotContains(response, "Awesome book")  # new
         self.assertTemplateUsed(response, "books/book_detail.html")
