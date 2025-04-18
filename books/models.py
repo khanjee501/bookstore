@@ -1,3 +1,4 @@
+from dataclasses import field
 import uuid
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -13,6 +14,12 @@ class Book(models.Model):
     cover = models.ImageField(upload_to="cover/", blank=True)
 
     class Meta:
+        # There is a general rule to not start indexing from the start
+        # and only while prodcutionizing
+        # and only those filelds that are used 10-25% while querying.
+        indexes = [
+            models.Index(fields=["id"], name="id_index"),
+        ]
         permissions = [
             ("special_status", "Can read all books"),
         ]
