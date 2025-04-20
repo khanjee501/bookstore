@@ -38,6 +38,9 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
 )
 SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
 
+SESSION_COOKIE_SECURE = env.bool("DJANGO_SESSION_COOKIE_SECURE", default=True)
+CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=True)
+
 
 ALLOWED_HOSTS = [".onrender.com", ".herokuapp.com", "localhost", "127.0.0.1"]
 
